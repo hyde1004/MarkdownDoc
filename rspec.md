@@ -4,3 +4,4 @@
  - [An Introduction To RSpec](http://blog.teamtreehouse.com/an-introduction-to-rspec)
  - [RSpec Home](http://www.rspec.info/)
  - [Better Specs](http://betterspecs.org/ko/)
+ - [an introduction to RSpec - Part I](http://blog.davidchelimsky.net/blog/2007/05/14/an-introduction-to-rspec-part-i/)
