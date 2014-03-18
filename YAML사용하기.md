@@ -35,3 +35,28 @@ hash = <<EOS
 EOS
 ```
 
+다음은 기본적인 사용법을 정리한 hello_yaml.rb 이다.
+```ruby
+# 필요한 파일
+require 'yaml'
+
+# 변환
+str = "Hello, Yaml!"
+puts str.to_yaml # y(str)
+
+
+arr = ["one", "two", "three"]
+puts arr.to_yaml # y(arr)
+
+# 파일 저장
+fileName = File.open('counting.yml', 'w')
+	YAML.dump(arr, fileName)
+fileName.close
+
+# 파일 읽기
+fileName = File.open('counting.yml', "r")
+	newArr = YAML.load(fileName) # to array
+fileName.close
+
+puts newArr.to_yaml # y(newArr)
+```
