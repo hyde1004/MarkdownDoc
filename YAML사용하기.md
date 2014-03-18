@@ -1,5 +1,8 @@
 #### YAML 사용하기
-아래 내용은 Struggling With Ruby (http://strugglingwithruby.blogspot.kr/2008/10/yaml.html?m=1)을 참고로 정리한 내용이다.
+
+###### Reference
+ - [Struggling With Ruby](http://strugglingwithruby.blogspot.kr/2008/10/yaml.html?m=1)
+ - [YAML - Data Serialization in Ruby](http://csc.columbusstate.edu/woolbright/class/swatson.pdf)
 
 YAML은 XML에 비해 눈으로 데이터 확인이 용이하며, 해당 데이터를 쉽게 직렬화할 수 있다.
 
