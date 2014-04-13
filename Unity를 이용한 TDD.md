@@ -1,7 +1,7 @@
 #### Unity를 이용한 TDD
 
 ##### Reference
- - [Unity](http://unity.sourceforge.net)
+ - [Unity](http://unity.sourceforge.net) 의 examples/example_1
 
 Unity는 C언어를 이용한 TDD framework이다. Embedded에 적용할 수 있도록 header file 2개와 c파일 하나로 구성되어 있다.
 다만, Test Runner하는 부분이 성가신데, 이는 ruby script를 이용하여 해결할 수 있다.
@@ -109,3 +109,9 @@ clean:
 ```
 
 디렉토리 구조나 makefile을 좀 더 적절하게 변경하는 것은 추후에 추가할 예정이다.
+
+그런데 example_1을 따라해보니, 실제로 매우 불편했다.
+ - 나 스스로는 Test Runner를 만들지 못하겠다. script를 써야만 했다.
+ - Test Group하나만 가능하다. 즉 Test Case 모음은 하나의 파일에만 존재해야 했다. Test Runner를 만들기 위해서 ruby scriptt로 2개의 Test Case 파일을 시도하면 에러가 발생했다. ( main( ) 함수가 2개 생기기 때문이다. )
+
+이러한 문제는 example_2에서 해결되었다.
