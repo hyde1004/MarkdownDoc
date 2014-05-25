@@ -1,6 +1,6 @@
 #### extern "C"의 사용
 
-######
+###### Reference
  - [Why do we need extern “C”{ #include <foo.h> } in C++?](http://stackoverflow.com/questions/67894/why-do-we-need-extern-c-include-foo-h-in-c)
 
 ##### 기본 code
