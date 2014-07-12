@@ -269,14 +269,160 @@ for key in d:
     print d[key]  # prints "bar" 
 ```
 
+#### Student Becomes the Teacher
 
+##### Lesson Number One
 
+``` python
+animal_sounds = {
+    "cat": ["meow", "purr"],
+    "dog": ["woof", "bark"],
+    "fox": [],
+}
+print animal_sounds["cat"]
+```
 
+#### Lists and Functions
 
+##### Appending to a list
+``` python
+n = [1, 3, 5]
+# Append the number 4 here
+n.append(4)
+```
 
+##### Removing elements from lists
+This exercise will expand on ways to remove items from a list. You actually have a few options. For a list called `n`:
 
+1. `n.pop(index)` will remove the item at `index` from the list and return it to you:
+``` python
+n = [1, 3, 5]
+n.pop(1)
+# Returns 3 (the item at index 1)
+print n
+# prints [1, 5]
+```
+2. `n.remove(item)` will remove the actual `item` if it finds it:
+``` python
+n.remove(1)
+# Removes 1 from the list,
+# NOT the item at index 1
+print n
+# prints [3, 5]
+```
+3. `del(n[1])` is like `.pop` in that it will remove the item at the given index, but it won't return it:
+``` python
+del(n[1])
+# Doesn't return anything
+print n
+# prints [1, 5]
+```
 
+##### Passing a range into a function
+``` python
+range(6) # => [0,1,2,3,4,5]
+range(1,6) # => [1,2,3,4,5]
+range(1,6,3) # => [1,4]
+```
 
+ - range(stop)
+ - range(start, stop)
+ - range(start, stop, step)
+
+##### Iterating over a list in a function
+Now that we've learned about `range`, we have two ways of iterating through a list.
+ - Method 1 : ` for item in list`
+``` python
+for item in list:
+    print item
+```
+
+ - Method 2 : iterate through indexes
+ ``` python
+ for i in range(len(list)):
+    print list[i]
+```
+
+**Method 1** is useful to loop through the list, but it's not possible to modify the list this way. **Method 2** uses indexes to loop through the list, making it possible to also modify the list if needed. Since we aren't modifying the list, feel free to use either one on this lesson!
+
+##### Using two lists as two arguments in a function
+``` python
+a = [1, 2, 3]
+b = [4, 5, 6]
+print a + b
+# prints [1, 2, 3, 4, 5, 6]
+```
+
+#### Battleship!
+
+##### Make a List
+``` python
+print ["O"] * 5
+# prints ['O', 'O', 'O', 'O', 'O']
+```
+##### Printing Pretty
+``` python 
+letters = ['a', 'b', 'c', 'd']
+print " ".join(letters)
+print "---".join(letters)
+```
+
+##### Hide...
+``` python
+from random import randint
+coin = randint(0, 1) # 0, 1
+dice = randint(1, 6) # 1, 2, 3, 4, 5, 6
+```
+
+#### Loops
+
+##### While / else
+``` python
+while condition:
+    pass
+else:
+    pass 
+```
+
+##### For your strings
+``` python
+word = "eggs!"
+for c in word:
+    print c
+```
+
+##### Looping over a dictionary
+``` python
+d = {'x': 9, 'y': 10, 'z': 20}
+for key in d:
+    if d[key] == 10
+        print "This dictionary has the value 10!"
+```
+
+##### Counting as you go
+``` python
+choices = ['pizza', 'pasta', 'salad', 'nachos']
+
+print 'Your choices are:'
+for index, item in enumerate(choices):
+    print index + 1, item
+```
+##### Multiple lists
+It's also common to need to iterate over two lists at once. This is where the built-in `zip` function comes in handy.
+
+`zip` will create pairs of elements when passed two lists, and will stop at the end of the shorter list.
+
+`zip` can handle three or more lists as well!
+
+##### For / else
+``` python
+names = ['Hyde', 'Jack', 'Dorothy', 'Jane']
+
+for name in names:
+    print name
+else:
+    print "No more name"
+```
 
 
 
