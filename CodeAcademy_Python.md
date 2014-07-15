@@ -424,9 +424,218 @@ else:
     print "No more name"
 ```
 
+#### Advanced Topics in Python
 
+##### keys() and values()
+``` python
+my_dict = {
+    "Name" : "Junggu Lee",
+    "Company" : "LGE",
+    "Age" : 41
+}
 
+print my_dict.keys()
+print my_dict.values()
+print my_dict.items()
+```
 
+##### The 'in' Operator
+``` python
+for number in range(5):
+    print number,
+
+d = { "name": "Eric", "age": 26 }
+for key in d:
+    print key, d[key],
+
+for letter in "Eric":
+    print letter,  # note the comma!
+```
+
+##### List Comprehension Syntax
+``` python
+new_list = [x for x in range(1,6)]
+# => [1, 2, 3, 4, 5]
+
+doubles = [x*2 for x in range(1,6)]
+# => [2, 4, 6, 8, 10]
+
+doubles_by_3 = [x*2 for x in range(1,6) if (x*2)%3 == 0]
+# => [6]
+
+```
+
+##### List Slicing Syntax
+``` python
+[start:end:stride]
+```
+
+##### Reversing a List
+``` python
+letters = ['A', 'B', 'C', 'D', 'E']
+print letters[::-1]
+```
+
+##### Anonymous Functions
+See the `lambda` bit? Typing
+
+``` python
+lambda x: x % 3 == 0
+```
+Is the same as
+
+``` python
+def by_three(x):
+    return x % 3 == 0
+```
+
+##### Lambda Syntax
+``` python
+my_list = range(16)
+print filter(lambda x: x % 3 == 0, my_list)
+```
+
+##### Try it!
+``` python
+cubes = [x**3 for x in range(1, 11)]
+filter(lambda x: x % 3 == 0, cubes)
+```
+
+#### Binary Representaion
+##### Lesson 10:The Base 2 Number System
+``` python
+print 0b1,    #1
+print 0b10,   #2
+```
+
+##### The bin() Function
+ - `bin()` function
+ - `oct()` function
+ - `hex()` function
+
+``` python
+print bin(1)
+print bin(2)
+```
+
+##### int()'s Second Parameter
+``` python
+int("42")
+# ==> 42
+
+int("110", 2)
+# ==> 6
+```
+
+#### Introduction to Classes
+##### Class Syntax
+``` python
+class NewClass(object):
+    # Class magic here
+    pass
+```
+
+##### Let's Not Get Too Selfish
+``` python
+class Animal(object):
+    def __init__(self, name):
+        self.name = name
+```
+
+##### Inheritance Syntax
+``` python
+class DerivedClass(BaseClass):
+    # code goes here
+```
+
+##### Override!
+``` python
+class Employee(object):
+    def __init__(self, name):
+        self.name = name
+    def greet(self, other):
+        print "Hello, %s" % other.name
+
+class CEO(Employee):
+    def greet(self, other):
+        print "Get back to work, %s!" % other.name
+
+ceo = CEO("Emily")
+emp = Employee("Steve")
+emp.greet(ceo)
+# Hello, Emily
+ceo.greet(emp)
+# Get back to work, Steve!
+```
+
+``` This Looks Like a Job For ...
+``` python
+class Derived(Base):
+   def m(self):
+       return super(Derived, self).m()
+```
+
+#### File Input/Output
+##### See It to Believe It
+
+``` python
+my_list = [i**2 for i in range(1,11)]
+# Generates a list of squares of the numbers 1 - 10
+
+f = open("output.txt", "w")
+
+for item in my_list:
+    f.write(str(item) + "\n")
+
+f.close()
+```
+
+##### Reading
+``` python
+my_file = open("output.txt", "r")
+print my_file.read()
+my_file.close()
+```
+
+##### Reading Between the Lines
+``` python
+my_file = open("text.txt", "r")
+
+print my_file.readline()
+print my_file.readline()
+print my_file.readline()
+
+my_file.close()
+```
+
+##### The 'with' and 'as' Keywords
+Programming is all about getting the computer to do the work. Is there a way to get Python to automatically close our files for us?
+
+Of course there is. This is Python.
+
+You may not know this, but file objects contain a special pair of built-in methods: `__enter__()` and `__exit__()`. The details aren't important, but what is important is that when a file object's `__exit__()` method is invoked, it automatically closes the file. How do we invoke this method? With with and as.
+
+The syntax looks like this:
+
+``` python
+with open("file", "mode") as variable:
+    # Read or write to the file
+```
+
+``` python
+with open("text.txt", "w") as textfile:
+	textfile.write("Success!")
+```
+
+##### Case Closed?
+``` python
+f = open("bg.txt")
+f.closed
+# False
+f.close()
+f.closed
+# True
+```
 
 
 
