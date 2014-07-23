@@ -11,3 +11,6 @@
 ``` python
 len_cycles = [len(n) for n in cycles]
 ```
+
+##### Directory operators
+https://docs.python.org/3.4/library/pathlib.html#basic-use
