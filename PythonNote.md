@@ -14,3 +14,18 @@ len_cycles = [len(n) for n in cycles]
 
 ##### Directory operators
 https://docs.python.org/3.4/library/pathlib.html#basic-use
+
+##### zip function
+여러 리스트를 김밥말듯 말아서, 자른다.
+```python
+a = [1, 2, 3, 4, 5]
+b = ['a', 'e', 'i', 'o', 'u']
+for x, y in zip(a, b):
+	print(x, y)
+
+1 a
+2 e
+3 i
+4 o
+5 u    
+```
