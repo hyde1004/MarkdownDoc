@@ -11,6 +11,7 @@ urllib는 url처리 모듈이다.
 import urllib.request
 url = 'http://dna.daum.net'
 
-response = urllib.request.urlopen(url)
+response = urllib.request.urlopen(url) # file open과 유사
 html = response.read()
+response.close()
 ```
