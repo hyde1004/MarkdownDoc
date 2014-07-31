@@ -29,3 +29,15 @@ for x, y in zip(a, b):
 4 o
 5 u    
 ```
+
+##### import 사용법
+``` python
+# import 파일명 형태
+import module1
+module1.hello()
+
+# from 파일명 import 함수명 형태 (파일명 생략가능)
+from module1 import hello() 
+```
+
+`if __name__ == '__main__'` 구문은 파일 단독으로 실행하는 경우만 동작하고, 다른 파일에서 재사용할때는 동작하지 않는 부분이다.
