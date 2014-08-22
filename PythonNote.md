@@ -41,3 +41,13 @@ from module1 import hello()
 ```
 
 `if __name__ == '__main__'` 구문은 파일 단독으로 실행하는 경우만 동작하고, 다른 파일에서 재사용할때는 동작하지 않는 부분이다.
+
+##### list slice
+###### 출처 : http://codingbat.com/prob/p148661
+다음의 결과는 서로 다르다.
+
+``` python
+def rotate_left3(nums):
+	return nums[1:] + nums[0:1] # list + list
+    return nums[1:] + nums[0] # 불가 : list + int
+```
