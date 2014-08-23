@@ -3,6 +3,13 @@
 ##### urllib
 ###### python3에서 urllib2는 urllib에 흡수되었다.
 
+urllib는 다음 모듈을 모아 놓은 패키지이다.
+
+- urllib.request for opening and reading URLs
+- urllib.error containing the exceptions raised by urllib.request
+- urllib.parse for parsing URLs
+- urllib.robotparser for parsing robots.txt files
+
 urllib는 url처리 모듈이다.
 다음은 가장 간단한 사용방법이다.
 
@@ -14,4 +21,28 @@ url = 'http://dna.daum.net'
 response = urllib.request.urlopen(url) # file open과 유사
 html = response.read()
 response.close()
+```
+
+##### urllib.request
+###### 출처 : https://docs.python.org/3/library/urllib.request.html#module-urllib.request
+
+urllib.request는 URL관련한 열기, 인증, 쿠키 등에 대한 클래스와 함수를 정의한다.
+
+``` python
+# Class
+urllib.request.Request(url, data=None, headers={}, origin_req_host=None, unverifiable=False, method=None)
+
+# Function
+urllib.request.urlopen(url, data=None, [timeout, ]*, cafile=None, capath=None, cadefault=False)
+```
+기본 사용형태는 다음과 같다
+``` python
+import urllib.request
+
+url = "http://www.naver.com"
+
+req = urllib.request.Request(url)
+response = urllib.request.urlopen(req)
+
+result = response.read().decode('utf-8')
 ```
