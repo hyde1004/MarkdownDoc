@@ -33,3 +33,6 @@ Little Fox의 로그인부분 간략화한 HTML코드는 다음과 같다.
     <input type="password" name="" value="">   <!-- 암호 입력 박스 -->
 </form>
 ```
+
+성공여부를 확인하기 위한 URL. 다음 URL이 읽을수 있으면 성공이다.
+http://www.littlefox.co.kr/ko/supplement/org/C0003640
