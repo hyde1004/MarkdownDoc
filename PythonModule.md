@@ -46,3 +46,26 @@ response = urllib.request.urlopen(req)
 
 result = response.read().decode('utf-8')
 ```
+
+#### BeautifulSoup4
+###### Reference
+ - [BeautifulSoup4 번역문서](http://coreapython.hosting.paran.com/etc/beautifulsoup4.html)
+ - [How to find tags with only certain attributes - BeautifulSoup](http://stackoverflow.com/questions/8933863/how-to-find-tags-with-only-certain-attributes-beautifulsoup)
+
+기본 사용방법은 html문서를 BeautfilSoup에 넣어주면 된다.
+
+``` python
+import bs4
+
+soup = bs4.BeautifulSoup(html_doc)
+
+print(soup.prettify())  # 보기 좋게 출력
+
+soup.title		# title tag에 접근
+soup.body		# body tag에 접근
+
+for talk in soup.find_all('div', {'class':'talk'}):  # div tag의 속성으로 검색
+	print(talk.span.text)
+# <div class=\'talk\'><span>Mom: How was school today, Sam?</span></div>
+
+```
