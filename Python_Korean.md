@@ -1,4 +1,4 @@
-#### Python 3와 한글
+#### Python 3와 Encoding
 ###### Reference
 
 Python을 공부하면서 Web Page를 Scrap하는 코드를 만들어보았다.
