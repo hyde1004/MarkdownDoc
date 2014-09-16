@@ -22,12 +22,24 @@ response = urllib.request.urlopen(url) # file open과 유사
 html = response.read()
 response.close()
 ```
+`urlopen()`은 url 또는 `Request`객체를 인자로 받는다. `Request` 객체를 사용하면, POST mehtod를 사용하거나, header를 추가할 수 있다. `urlopen()`에 data를 넘기면 POST method로 수행된다.
 
+``` python
+import urllib.request
+url = 'http://dna.daum.net'
+data = urllib.parse.urlencode({'spam':1, 'eggs':2})
+data = data.encode('utf-8')
+req1 = urllib.request.Request(url)
+response = urllib.request.urlopen(url, data)
+```
 ##### urllib.request
 ###### 출처 : https://docs.python.org/3/library/urllib.request.html#module-urllib.request
 
 urllib.request는 URL관련한 열기, 인증, 쿠키 등에 대한 클래스와 함수를 정의한다.
 
+#### urllib.parse
+###### Reference
+ - 
 ``` python
 # Class
 urllib.request.Request(url, data=None, headers={}, origin_req_host=None, unverifiable=False, method=None)
