@@ -1,3 +1,4 @@
+
 #### Python Module
 
 ##### urllib
@@ -22,11 +23,22 @@ response = urllib.request.urlopen(url) # file open과 유사
 html = response.read()
 response.close()
 ```
+`urlopen()`은 url 또는 `Request`객체를 인자로 받는다. `Request` 객체를 사용하면, POST mehtod를 사용하거나, header를 추가할 수 있다. `urlopen()`에 data를 넘기면 POST method로 수행된다.
 
+``` python
+import urllib.request
+url = 'http://dna.daum.net'
+data = urllib.parse.urlencode({'spam':1, 'eggs':2})
+data = data.encode('utf-8')
+req1 = urllib.request.Request(url)
+response = urllib.request.urlopen(url, data)
+```
 ##### urllib.request
 ###### 출처 : https://docs.python.org/3/library/urllib.request.html#module-urllib.request
 
 urllib.request는 URL관련한 열기, 인증, 쿠키 등에 대한 클래스와 함수를 정의한다.
+
+#### urllib.parse
 
 ``` python
 # Class
@@ -68,4 +80,17 @@ for talk in soup.find_all('div', {'class':'talk'}):  # div tag의 속성으로 �
 	print(talk.span.text)
 # <div class=\'talk\'><span>Mom: How was school today, Sam?</span></div>
 
+```
+
+`find_all()`의 결과는 ResultSet인데, 각 결과를 담고 있는 list이다. 따라서 list의 원소에 대해 다시 `find_all()`을 사용가능하다. 일출 시간을 가져오는 예제이다. (https://github.com/hyde1004/sunrise_info)
+
+``` python
+url = 'http://astro.kasi.re.kr/Life/Knowledge/sunmoon_map/sunmoon_popup.php?year=2014&month=9&location=%C3%B5%BE%C8'
+
+soup = bs4.BeautifulSoup(html)
+
+day_info = soup.tbody.find_all('tr')
+for info in day_info:
+	sunrise_info = info.find_all('td')
+	print(sunrise_info[2].text)
 ```
