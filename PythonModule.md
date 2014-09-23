@@ -94,3 +94,14 @@ for info in day_info:
 	sunrise_info = info.find_all('td')
 	print(sunrise_info[2].text)
 ```
+
+#### unittest
+
+##### Skipping tests
+`@unittest.skip( )`을 사용하면, 해당 test를 skip할 수 있다. 이외에 여러 조건을 지정할 수 있다.
+``` python
+class MyTestCase(unittest.TestCase):
+	@unittest.skip("demonstrating skipping")
+    def test_nothing(self):
+    	self.fail("shouldn't happen")
+```
